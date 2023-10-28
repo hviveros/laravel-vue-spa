@@ -19,4 +19,6 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::get('/publications', [PublicationController::class, 'index']);
+Route::get('/publications',         [PublicationController::class, 'index']);
+
+Route::get('/publication/{$slug}',  [PublicationController::class, 'show']);
