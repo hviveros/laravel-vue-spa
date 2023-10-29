@@ -11,13 +11,13 @@
 </head>
 <body>
 
-    <h1>Welcome</h1>
+    <!-- <h1>Welcome</h1> -->
     
     <!-- Vue -->
-    <div id="app">
-        <!-- Componente de Vue -->
-        <!-- <publications /> -->
-    </div>
+    <div id="app"></div>
+    
+    <!-- Componente de Vue -->
+    <!-- <publications /> -->
 
 </body>
 </html>

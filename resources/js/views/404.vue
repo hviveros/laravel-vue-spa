@@ -1,5 +1,12 @@
 <template>
     <div>
+        <h1>404</h1>
+    </div>
+</template>
+
+
+<!-- <template>
+    <div>
 
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
@@ -11,4 +18,4 @@
         </section>
 
     </div>
-</template>
+</template> -->

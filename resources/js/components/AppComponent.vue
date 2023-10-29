@@ -12,8 +12,8 @@
                             <h4>Navegación</h4>
                             <ul class="list-unstyled">
                                 <!-- Propiedades propias de vue-router -->
-                                <li><router-link :to="{name:'home'}" class="text-white">Home</router-link></li>
-                                <li><router-link :to="{name:'blog'}" class="text-white">Blog</router-link></li>
+                                <li><router-link to="/" class="text-white">Home</router-link></li>
+                                <li><router-link to="/blog" class="text-white">Blog</router-link></li>
                             </ul>
                         </div>
                     </div>
@@ -32,10 +32,10 @@
             </div>
         </header>
 
-        <h1>hola</h1>
-
         <!-- El contenido se va visualizar aquí, aplicamos un poco de transiciones -->
-        <router-view />     
+        <transition name="fade">
+            <router-view></router-view>
+        </transition>
 
     </div>
 </template>

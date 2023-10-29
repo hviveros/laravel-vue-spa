@@ -13,8 +13,7 @@
         <section class="container">
             <div class="row justify-content-center">
                 <div class="col-md-10">
-
-                    <!-- Componente de Vue -->
+                    
                     <publications />
                     
                 </div>

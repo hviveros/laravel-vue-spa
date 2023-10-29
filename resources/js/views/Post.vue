@@ -1,5 +1,13 @@
 <template>
     <div>
+        <h1>Post</h1>
+    </div>
+</template>
+
+
+
+<!-- <template>
+    <div>
 
         <section class="py-5 text-center container">
             <div class="row py-lg-5">
@@ -13,7 +21,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-10">
 
-                    <!-- Componente de Vue -->
+                    Componente de Vue
                     <publications />
                     
                 </div>
@@ -21,4 +29,4 @@
         </section>
 
     </div>
-</template>
+</template> -->

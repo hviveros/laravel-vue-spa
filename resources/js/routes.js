@@ -1,30 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-const Home = () => import ('./views/Home.vue');
-const Blog = () => import ('./views/Blog.vue');
-const Post = () => import ('./views/Post.vue');
-const NotFound = () => import ('./views/404.vue');
+import Home from './views/Home.vue';
+import Blog from './views/Blog.vue';
+import Post from './views/Post.vue';
+import NotFound from './views/404.vue';
 
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: Home
+        component: Home,
     },
     {
         path: '/blog',
         name: 'blog',
-        component: Blog
+        component: Blog,
     },
     {
-        path: ':slug',
+        path: '/:slug',
         name: 'post',
         component: Post,
-        props: true
+        props: true,
     },
     {
-        path: '*',
-        component: NotFound
+        path: '/*',
+        component: NotFound,
     },
 ];
   
