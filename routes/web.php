@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+// Route::view('/{any}', 'home')
+//     ->middleware(['auth'])
+//     ->where('any', '.*');

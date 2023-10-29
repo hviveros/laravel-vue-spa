@@ -10,11 +10,13 @@
 
 </head>
 <body>
+
+    <h1>Welcome</h1>
     
     <!-- Vue -->
     <div id="app">
         <!-- Componente de Vue -->
-        <app />
+        <!-- <publications /> -->
     </div>
 
 </body>

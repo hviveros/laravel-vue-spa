@@ -1,30 +1,36 @@
-import { Vue } from 'vue';
-import { Router } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 
-Vue.use(Router);
+const Home = () => import ('./views/Home.vue');
+const Blog = () => import ('./views/Blog.vue');
+const Post = () => import ('./views/Post.vue');
+const NotFound = () => import ('./views/404.vue');
 
-export default new Router({
-    routes: [
-        {
-            path: '/',
-            name: 'home',
-            component: require('./views/Home')
-        },
-        {
-            path: 'blog',
-            name: 'blog',
-            component: require('./views/Blog')
-        },
-        {
-            path: ':slug',
-            name: 'post',
-            component: require('./views/Post'),
-            props: true
-        },
-        {
-            path: '*',
-            component: require('./views/404')
-        }
-    ],
-    mode: 'history' // Evita el uso de #/blog
-})
+const routes = [
+    {
+        path: '/',
+        name: 'home',
+        component: Home
+    },
+    {
+        path: '/blog',
+        name: 'blog',
+        component: Blog
+    },
+    {
+        path: ':slug',
+        name: 'post',
+        component: Post,
+        props: true
+    },
+    {
+        path: '*',
+        component: NotFound
+    },
+];
+  
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+});
+  
+export default router;

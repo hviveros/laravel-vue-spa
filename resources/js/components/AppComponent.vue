@@ -35,10 +35,7 @@
         <h1>hola</h1>
 
         <!-- El contenido se va visualizar aquí, aplicamos un poco de transiciones -->
-        <router-view>
-            <transition name="fade">
-            </transition>
-        </router-view>        
+        <router-view />     
 
     </div>
 </template>
