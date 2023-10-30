@@ -21,9 +21,9 @@
             </div>
             <div class="navbar navbar-dark bg-dark shadow-sm">
                 <div class="container">
-                    <a href="#" class="navbar-brand d-flex align-items-center">
+                    <router-link to="/" class="navbar-brand d-flex align-items-center">
                         <strong>DevWeb</strong>
-                    </a>
+                    </router-link>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                         aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,9 @@
         </header>
 
         <!-- El contenido se va visualizar aquí, aplicamos un poco de transiciones -->
-        <transition name="fade">
-            <router-view></router-view>
+        <!-- $route.fullPath -> Es la forma en que obligamos en que esta sección se actualice -->
+        <transition name="fade" mode="out-in">
+            <router-view :key="$route.fullPath"></router-view>
         </transition>
 
     </div>

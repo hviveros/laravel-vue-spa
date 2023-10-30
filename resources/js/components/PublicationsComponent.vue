@@ -1,33 +1,31 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8">
-                
-                <!-- ciclo for de Vue -->
-                <div class="card my-3" v-for="item in list">
-                    <a 
-                        v-bind:href="item.slug"
-                        v-text="item.title"
-                        class="card-header"
-                    ></a>
-                    <div class="card-body">
-                        <p class="text-muted"><small>Id: {{ item.id }}</small></p>
-                        <p
-                            v-text="item.body"
-                            class="cart-text"
-                        ></p>
-                    </div>
+    <div class="row">
+        <div class="col-md-12">
+            
+            <!-- ciclo for de Vue -->
+            <div class="card my-3" v-for="item in publications">
+                <router-link 
+                    :to="{ name: 'publication', params: { slug: item.slug }}"
+                    v-text="item.title"
+                    class="card-header"
+                ></router-link>
+                <div class="card-body">
+                    <p class="text-muted"><small>Id: {{ item.id }}</small></p>
+                    <p
+                        v-text="item.excerpt"
+                        class="cart-text"
+                    ></p>
                 </div>
-
-                <!-- Componente externo de Vue -->
-                <!-- @infinite -> referencia de la librería que escucha un evento v-on -->
-                <infinite-loading @infinite="infiniteHandler">
-                    <!-- Traducir algunos textos de esta librería -->
-                    <template #complete>No más resultados</template>
-                    <template #spinner>Cargando...</template>
-                </infinite-loading>
-
             </div>
+
+            <!-- Componente externo de Vue -->
+            <!-- @infinite -> referencia de la librería que escucha un evento v-on -->
+            <infinite-loading @infinite="infiniteHandler">
+                <!-- Traducir algunos textos de esta librería -->
+                <template #complete>No más resultados</template>
+                <template #spinner>Cargando...</template>
+            </infinite-loading>
+
         </div>
     </div>
 </template>
@@ -39,7 +37,7 @@
         },
         data(){
             return {
-                list: [],
+                publications: [],
                 page: 0
             };
         },
@@ -54,7 +52,7 @@
                     let publications = response.data.data
                     
                     if (publications.length) {
-                        this.list = this.list.concat(publications);
+                        this.publications = this.publications.concat(publications);
                         // eventos de la librería
                         $state.loaded();
                     } else {

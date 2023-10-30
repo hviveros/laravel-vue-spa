@@ -38,7 +38,6 @@ class PublicationController extends Controller
     {
         //
         return Publication::where('slug', $slug)->first();
-        // return Publication::find($slug);
     }
 
     /**

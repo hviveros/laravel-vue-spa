@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import Home from './views/Home.vue';
-import Blog from './views/Blog.vue';
-import Post from './views/Post.vue';
-import NotFound from './views/404.vue';
+import Home        from './views/Home.vue';
+import Blog        from './views/Blog.vue';
+import Publication from './views/Publication.vue';
+import NotFound    from './views/404.vue';
 
 const routes = [
     {
@@ -17,9 +17,9 @@ const routes = [
         component: Blog,
     },
     {
-        path: '/:slug',
-        name: 'post',
-        component: Post,
+        path: '/publication/:slug',
+        name: 'publication',
+        component: Publication,
         props: true,
     },
     {

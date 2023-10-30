@@ -21,4 +21,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/publications',         [PublicationController::class, 'index']);
 
-Route::get('/publication/{$slug}',  [PublicationController::class, 'show']);
+Route::get('/publication/{slug}',  [PublicationController::class, 'show']);
